@@ -1,12 +1,36 @@
-# React + Vite
+# 📝 Blog App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React blog app with authentication, CRUD features, and Appwrite backend integration.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Demo
 
-## Expanding the ESLint configuration
+[Click here to view the demo](https://your-demo-link.netlify.app)  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Features
+
+- 🔐 User Authentication (Signup, Login, Logout)
+- 📝 Create, Edit, and Delete Posts
+- 🗂️ View All Posts
+- ❤️ Like and 💬 Comment on Posts
+- 🙍‍♂️ User Profile Page
+
+---
+
+## ⚙️ Tech Stack
+
+- **Frontend**: React, Tailwind CSS  
+- **Backend**: Appwrite (Auth, Database, Storage)
+
+---
+
+## 📦 Getting Started
+
+```bash
+git clone https://github.com/ManthanDadhania/blog-app.git
+cd blog-app
+npm install
+npm run dev
