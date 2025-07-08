@@ -6,7 +6,7 @@ A modern React blog app with authentication, CRUD features, and Appwrite backend
 
 ## 🌐 Live Demo
 
-[Click here to view the demo](https://your-demo-link.netlify.app)  
+[Click here to view the demo](https://blog-app-livid-chi.vercel.app/)  
 
 ---
 
