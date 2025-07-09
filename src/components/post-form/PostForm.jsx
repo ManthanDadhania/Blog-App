@@ -19,6 +19,7 @@ function PostForm({ post }) {
     const userData = useSelector(state => state.auth.userData)
 
     const submit = async (data) => {
+        //For editing current post
         if (post) {
             const file = data.image[0] ? databaseService.uploadFile(data.image[0]) : null
             if (file) {
@@ -33,6 +34,7 @@ function PostForm({ post }) {
                 navigate(`/post/${dbPost.$id}`)
             }
         }
+        //For adding new post
         else {
             const file = await databaseService.uploadFile(data.image[0])
             if (file) {
@@ -72,8 +74,9 @@ function PostForm({ post }) {
         }
     }, [watch, slugTransform, setValue])
     return (
-        <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-            <div className="w-2/3 px-2">
+        <form onSubmit={handleSubmit(submit)} className="flex flex-col lg:flex-row flex-wrap">
+            {/* Left Side */}
+            <div className="w-full lg:w-2/3 px-2">
                 <Input
                     label="Title :"
                     placeholder="Title"
@@ -89,9 +92,16 @@ function PostForm({ post }) {
                         setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
                     }}
                 />
-                <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
+                <RTE
+                    label="Content :"
+                    name="content"
+                    control={control}
+                    defaultValue={getValues("content")}
+                />
             </div>
-            <div className="w-1/3 px-2">
+
+            {/* Right Side */}
+            <div className="w-full lg:w-1/3 px-2 mt-6 lg:mt-0">
                 <Input
                     label="Featured Image :"
                     type="file"
@@ -104,7 +114,7 @@ function PostForm({ post }) {
                         <img
                             src={databaseService.getFileURL(post.featuredImage)}
                             alt={post.title}
-                            className="rounded-lg"
+                            className="rounded-lg w-full object-cover"
                         />
                     </div>
                 )}
@@ -119,6 +129,7 @@ function PostForm({ post }) {
                 </Button>
             </div>
         </form>
+
     )
 }
 
